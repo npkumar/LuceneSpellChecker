@@ -28,6 +28,8 @@ public class LuceneDYM {
         
         prop = new java.util.Properties();
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+        String dictionary = getClass().getClassLoader().getResource("fulldictionary00.txt").getFile();
+        
         
         try {
             prop.load(inputStream);
@@ -37,7 +39,7 @@ public class LuceneDYM {
         
         dir = new File(prop.getProperty("indexPath"));
         try {
-            plainTextDictionary = new PlainTextDictionary(new File(prop.getProperty("dictionaryPath")));
+            plainTextDictionary = new PlainTextDictionary(new File(dictionary));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LuceneDYM.class.getName()).log(Level.SEVERE, null, ex);
         }

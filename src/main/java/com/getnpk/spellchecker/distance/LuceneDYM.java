@@ -104,4 +104,26 @@ public class LuceneDYM {
         }
         return sb.toString();
     }
+    
+    
+    public String ifWordExists(String word) throws Exception {
+
+        String wordForSuggestions = word;
+
+        int suggestionsNumber = 5;
+
+        if (spellChecker.exist(wordForSuggestions)) {
+            return word;
+        }
+
+        String[] suggestions = spellChecker.suggestSimilar(wordForSuggestions, suggestionsNumber);
+
+        if (suggestions != null && suggestions.length > 0) {
+            return suggestions[0];
+        } else {
+            return "NULL";
+        }
+    }
+
+    
 }

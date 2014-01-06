@@ -1,11 +1,11 @@
 LuceneSpellChecker
 ==================
 
-Did you mean feature using Lucene supporting multiple distance measures and accuracy.
+* Did you mean feature using Lucene supporting multiple distance measures and accuracy.
+* Phonetic Search using Lucene.
 
-Use target/SpellChecker-1.0-SNAPSHOT.jar
+Example usage:
 
 <blockquote>
-LuceneDYM dym = DYMFactory.buildLuceneDYM(DistanceMeasure.LevensteinDistance, 0.8f);
-dym.getSuggestedQuery(queryWithSpellingMistakes));
+com/getnpk/spellchecker/App.java
 </blockquote>
